@@ -45,6 +45,43 @@ export class PieChartComponent implements OnInit, OnDestroy{
 ]
 }*/
 
+/*{"Energy Consumption":
+	[
+	{
+		"Unit Id":60,
+		"Consumption":340
+	}
+	,{
+		"Unit Id":61,
+		"Consumption":150
+  },
+  {
+		"Unit Id":62,
+		"Consumption":225
+  },
+  {
+		"Unit Id":63,
+		"Consumption":340
+  },
+  {
+		"Unit Id":64,
+		"Consumption":150
+  },
+  {
+		"Unit Id":65,
+		"Consumption":239
+  },
+  {
+		"Unit Id":66,
+		"Consumption":34
+  },
+  {
+		"Unit Id":67,
+		"Consumption":450
+	}
+]
+}*/
+
   pieChartOptions: ChartOptions = {
     responsive: true,
   };
@@ -53,7 +90,9 @@ export class PieChartComponent implements OnInit, OnDestroy{
   pieChartType: ChartType = 'pie';
   pieChartLegend = true;
   pieChartPlugins = [];
-  //pieChartColors: Color[] = ["#red", "#purple", "#pink", "green"];
+  pieChartColors = [{
+    backgroundColor: ['rgba(255,90,200,0.3)', 'rgba(0,255,0,0.3)', 'rgba(0,0,255,0.3)', 'rgba(10, 100, 100, 0.5)', 'rgba(255,192,203 ,1 )', 'rgba(225, 225, 0, 1)','rgb(255,0,255)', 'rgba(0, 181, 204, 1)'],
+  },];
   
 
   private subscription: Subscription;
@@ -63,7 +102,7 @@ export class PieChartComponent implements OnInit, OnDestroy{
   @ViewChild('msglog', { static: true }) msglog: ElementRef;
 
   constructor(private _mqttService: MqttService) {monkeyPatchChartJsTooltip();
-  monkeyPatchChartJsLegend(); }
+  monkeyPatchChartJsLegend(); /*_mqttService.connect({username: 'esp', password: 'ptlesp01'})*/}
 
   /*constructor() {
     monkeyPatchChartJsTooltip();

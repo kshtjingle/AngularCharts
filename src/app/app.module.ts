@@ -20,9 +20,13 @@ import { MqttModule, IMqttServiceOptions } from "ngx-mqtt";
 //import {MatTableModule} from '@angular/material/table';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
+  //connectOnCreate: false,
   hostname: 'broker.hivemq.com',
   port: 8000,
+  /*username: 'esp',
+  password: 'ptlesp01',*/
   path: '/mqtt'
+  
 }
 
 @NgModule({
